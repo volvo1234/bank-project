@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header, Content, List, ListItem, Text, Icon, Left, Right, Body, Button } from 'native-base';
+import { Container, Content, List, ListItem, Text, Icon, Right, Body } from 'native-base';
 import data from '../config/data';
 
 const Item = navigation => item => (
@@ -16,7 +16,6 @@ const Item = navigation => item => (
 const SummaryScreen = ({ navigation }) => {
     return (
         <Container>
-            <Header />
             <Content>
                 <List dataArray={data} renderRow={Item(navigation)} />
             </Content>

@@ -2,36 +2,38 @@ import React from 'react';
 import { Container, Text, Body, ListItem } from 'native-base';
 
 const DetailsScreen = ({ navigation }) => {
+    const {nickName, customerSince, detailInfo: { userName, age, amount, type }} = navigation.state.params.item;
+
     return (
         <Container>
             <ListItem>
                 <Body>
-                    <Text>Nick Name: {navigation.state.params.item.nickName}</Text>
+                <Text>Nick Name: {nickName}</Text>
                 </Body>
             </ListItem>
             <ListItem>
                 <Body>
-                <Text>User Name: {navigation.state.params.item.detailInfo.userName}</Text>
+                <Text>User Name: {userName}</Text>
                 </Body>
             </ListItem>
             <ListItem>
                 <Body>
-                <Text>Customer Since: {navigation.state.params.item.customerSince}</Text>
+                <Text>Customer Since: {customerSince}</Text>
                 </Body>
             </ListItem>
             <ListItem>
                 <Body>
-                <Text>Age: {navigation.state.params.item.detailInfo.age}</Text>
+                <Text>Age: {age}</Text>
                 </Body>
             </ListItem>
             <ListItem>
                 <Body>
-                <Text>Amount: {navigation.state.params.item.detailInfo.amount}</Text>
+                <Text>Amount: {amount}</Text>
                 </Body>
             </ListItem>
             <ListItem>
                 <Body>
-                <Text>Account Type: {navigation.state.params.item.detailInfo.type}</Text>
+                <Text>Account Type: {type}</Text>
                 </Body>
             </ListItem>
         </Container>

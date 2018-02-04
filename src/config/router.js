@@ -7,8 +7,10 @@ import DetailsScreen from '../screens/DetailsScreen';
 const RootNavigator = StackNavigator({
         Login: {
             screen: LoginScreen,
-            navigationOptions: {
-                title: 'Login',
+            navigationOptions: ({ navigation }) => {
+                return {
+                    title: typeof(navigation.state.params) === 'undefined' || typeof(navigation.state.params.title) === 'undefined'  ? 'Login' : `${navigation.state.params.title}`
+                }
             }
         },
 
